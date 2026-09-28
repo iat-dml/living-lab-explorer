@@ -270,8 +270,8 @@ export const resources = {
       },
       landing: {
         eyebrow: 'Reallabore',
-        title: 'Fuenf Regionen. Echte Praxis.',
-        body: 'In fuenf Reallaboren erproben wir innovative Ansaetze gemeinsam mit Praxisakteuren vor Ort. Waehlen Sie einen Standort auf der Karte, um Rahmenbedingungen, Ziele und Fortschritte zu erkunden.',
+        title: 'Fünf Regionen. Echte Praxis.',
+        body: 'In fünf Reallaboren erproben wir innovative Ansaetze gemeinsam mit Praxisakteuren vor Ort. Waehlen Sie einen Standort auf der Karte, um Rahmenbedingungen, Ziele und Fortschritte zu erkunden.',
         listTitle: 'Reallabore',
         mapLabel: 'Karte von Deutschland - Reallabor-Region auswaehlen',
       },

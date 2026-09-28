@@ -750,11 +750,11 @@
         "warm_quarter_precip_mm": "Niederschlag des waermsten Vierteljahres"
       },
       "landing": {
-        "body": "In fuenf Reallaboren erproben wir innovative Ansaetze gemeinsam mit Praxisakteuren vor Ort. Waehlen Sie einen Standort auf der Karte, um Rahmenbedingungen, Ziele und Fortschritte zu erkunden.",
+        "body": "In fünf Reallaboren erproben wir innovative Ansaetze gemeinsam mit Praxisakteuren vor Ort. Waehlen Sie einen Standort auf der Karte, um Rahmenbedingungen, Ziele und Fortschritte zu erkunden.",
         "eyebrow": "Reallabore",
         "listTitle": "Reallabore",
         "mapLabel": "Karte von Deutschland - Reallabor-Region auswaehlen",
-        "title": "Fuenf Regionen. Echte Praxis."
+        "title": "Fünf Regionen. Echte Praxis."
       },
       "layers": {
         "agriculture": "Landwirtschaft",

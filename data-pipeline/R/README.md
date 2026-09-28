@@ -16,22 +16,9 @@ already has.
 
 ## Workshop maps (A3 print sheets)
 
-`workshop_maps.R` is a separate, manual script that turns the report's cover map (minus the
-Germany locator) into one A3 print sheet per Living Lab. It uses an OpenStreetMap basemap
-instead of satellite imagery, with a sparse, scale-aware set of labels. Each sheet uses
-landscape or portrait, whichever fits the region better. Run it from this directory so `renv`
-activates:
-
-```powershell
-Rscript workshop_maps.R                       # all Living Labs, German sheets -> <repo>/workshop_maps_a3/
-Rscript workshop_maps.R --slug=rheingau --lang=en --preview
-```
-
-It needs the `pmtiles` CLI (or `PMTILES_BIN`). The first run for each Living Lab needs network
-access, to extract that region from the daily Protomaps OSM build into
-`data/_cache/workshop_osm/`. `--refresh-osm` fetches a fresh extract. The output folder
-(gitignored) holds the print-ready PDFs, the data each sheet was drawn from, and a README for
-the printer, ready to zip.
+The A3 workshop map script (`workshop_maps.R`) now lives in its own repository,
+`living-labs-base-maps`. It carries its own copy of `data/ll_boundaries.geojson` and the Living
+Lab names and colours, so boundary or metadata changes made here must be copied there by hand.
 
 ## Required external tools
 
