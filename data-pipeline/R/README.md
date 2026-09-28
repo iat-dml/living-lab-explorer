@@ -14,6 +14,12 @@ python data-pipeline/R/render_reports.py
 exactly the same manual-invocation contract every `data-pipeline/python/build_*.py` script
 already has.
 
+## Workshop maps (A3 print sheets)
+
+The A3 workshop map script (`workshop_maps.R`) now lives in its own repository,
+`living-labs-base-maps`. It carries its own copy of `data/ll_boundaries.geojson` and the Living
+Lab names and colours, so boundary or metadata changes made here must be copied there by hand.
+
 ## Required external tools
 
 - **Quarto >= 1.4** (bundles Typst automatically — no separate Typst install needed). Quarto
