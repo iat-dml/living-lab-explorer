@@ -176,6 +176,8 @@ export const resources = {
       },
       map: {
         loadError: 'Failed to load map data. Check the browser console.',
+        boundaryDisclaimer:
+          'The Living Lab boundaries are provisional and may be subject to change.',
         soilLoading: 'Loading soil polygons for this Living Lab...',
         soilLoadError: 'Soil data could not be loaded for this Living Lab.',
         climateLoading: 'Loading climate layer for this Living Lab...',
@@ -411,6 +413,8 @@ export const resources = {
       },
       map: {
         loadError: 'Kartendaten konnten nicht geladen werden. Bitte Browser-Konsole pruefen.',
+        boundaryDisclaimer:
+          'Die Grenzen der Reallabore sind vorläufig und können sich noch ändern.',
         soilLoading: 'Bodenpolygone fuer dieses Living Lab werden geladen...',
         soilLoadError: 'Die Bodendaten fuer dieses Living Lab konnten nicht geladen werden.',
         climateLoading: 'Klimaebene fuer dieses Reallabor wird geladen...',

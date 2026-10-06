@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { C } from '../theme.js'
 import { LL_ICONS } from '../data/ll_icons.js'
 import { LandingMap } from '../components/LandingMap.jsx'
+import { MapDisclaimer } from '../components/MapDisclaimer.jsx'
 import { useViewport } from '../hooks/useMediaQuery.js'
 
 export function Landing({ lls, loading }) {
@@ -95,25 +96,32 @@ export function Landing({ lls, loading }) {
             overflow: 'hidden',
             // Stacked, the map has no parent height to fill, so give it an explicit one.
             height: isNarrow ? (isMobile ? 300 : 380) : undefined,
+            // Column so the map fills whatever the disclaimer line below it leaves over.
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 8,
           }}
         >
-          {loading || !lls ? (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100%',
-                minHeight: 200,
-                color: C.muted,
-                fontSize: 13,
-              }}
-            >
-              {t('common.loading')}
-            </div>
-          ) : (
-            <LandingMap lls={lls} onPick={pickSlug} />
-          )}
+          <div style={{ flex: 1, minHeight: 0 }}>
+            {loading || !lls ? (
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '100%',
+                  minHeight: 200,
+                  color: C.muted,
+                  fontSize: 13,
+                }}
+              >
+                {t('common.loading')}
+              </div>
+            ) : (
+              <LandingMap lls={lls} onPick={pickSlug} />
+            )}
+          </div>
+          <MapDisclaimer style={{ textAlign: 'center' }} />
         </div>
 
         <div

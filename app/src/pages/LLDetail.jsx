@@ -16,6 +16,7 @@ import { normalizeLanguage } from '../i18n.js'
 import { LLBadge } from '../components/LLBadge.jsx'
 import { ContactManagerButton } from '../components/ContactManagerButton.jsx'
 import { DownloadReportCTA } from '../components/DownloadReportCTA.jsx'
+import { MapDisclaimer } from '../components/MapDisclaimer.jsx'
 import { PartnersMapSlot, PartnersPanelSlot } from '../components/PartnersProjectsTab.jsx'
 import { StatPanel } from '../components/StatPanel.jsx'
 import { BarChart } from '../components/BarChart.jsx'
@@ -486,6 +487,9 @@ function LayoutSplit({
               <PartnersMapSlot ll={ll} height="100%" />
             </div>
           )}
+          <MapDisclaimer
+            style={{ padding: '8px 16px', borderTop: `1.5px solid ${C.mutedLight}` }}
+          />
         </div>
 
         <div style={{ overflowY: 'auto', minWidth: 0, background: C.bg }}>
@@ -713,6 +717,7 @@ function LayoutStacked({
           <PartnersMapSlot ll={ll} height={mapHeight} />
         )}
       </div>
+      <MapDisclaimer style={{ margin: `6px ${gutter + 4}px 0` }} />
 
       {layer === 'partners' ? (
         <div style={section}>
@@ -895,6 +900,7 @@ function ComparisonColumn({
           <PartnersMapSlot ll={ll} height={300} />
         )}
       </div>
+      <MapDisclaimer style={{ margin: `6px ${gutter + 4}px 0` }} />
 
       {layer === 'partners' ? (
         <div style={section}>

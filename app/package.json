@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "check:soil-palette": "node scripts/check_soil_palette.mjs",
     "export:report-tokens": "node scripts/export_report_tokens.mjs",
+    "export:landing-svgs": "node scripts/export_landing_svgs.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "preview": "vite preview",
