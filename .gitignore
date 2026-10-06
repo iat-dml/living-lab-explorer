@@ -49,6 +49,10 @@ data-pipeline/R/renv/sandbox
 !.vscode/settings.json
 .idea/
 .claude/
+# Agent and planning tooling: kept locally, never published
+.planning/
+CLAUDE.md
+PROJECT-STATUS.md
 IMPROVEMENTS.md
 data/sqr1000_250_v10/Allgemeine Geschäftsbedingungen.pdf
 data/sqr1000_250_v10/General Standard Terms and Conditions.pdf
