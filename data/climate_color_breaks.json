@@ -1,7 +1,7 @@
 {
   "_meta": {
     "clip_to": "data/nuts3_ll.geojson",
-    "computed_at": "2026-08-17T13:07:37.515922Z",
+    "computed_at": "2026-11-04T13:58:36.471861Z",
     "input_pattern": "data/climate_source/chelsa-{variable}-{period}.tif",
     "slugs": [
       "east-brandenburg",
@@ -19,7 +19,7 @@
         8.6,
         9.1,
         9.4,
-        10.4
+        10.6
       ],
       "colors": [
         "#fce3da",
@@ -32,7 +32,7 @@
         "havelland": 9.487848792245558,
         "hessian-low-mountain": 8.604679800352773,
         "north-hessian-loess": 8.515730430203432,
-        "rheingau": 8.946568868694941
+        "rheingau": 9.135353035710194
       },
       "ramp": "sequential",
       "unit": {
@@ -43,12 +43,12 @@
     "change": {
       "2041_2070": {
         "breaks": [
+          2.3,
           2.4,
           2.5,
           2.6,
           2.7,
-          2.8,
-          2.9
+          2.8
         ],
         "colors": [
           "#fce3da",
@@ -62,7 +62,7 @@
           "havelland": 2.596379580771812,
           "hessian-low-mountain": 2.4587405292636433,
           "north-hessian-loess": 2.4797845036712682,
-          "rheingau": 2.4680954756753355
+          "rheingau": 2.4496858058630866
         },
         "ramp": "sequential",
         "unit": {
@@ -91,7 +91,7 @@
           "havelland": 4.022289508798655,
           "hessian-low-mountain": 3.9314126494149524,
           "north-hessian-loess": 3.929853479509702,
-          "rheingau": 3.928662402306191
+          "rheingau": 3.895938697015254
         },
         "ramp": "sequential",
         "unit": {
@@ -105,9 +105,9 @@
     "baseline": {
       "breaks": [
         515.0,
-        589.0,
-        741.0,
-        844.0,
+        601.0,
+        732.0,
+        822.0,
         1329.0
       ],
       "colors": [
@@ -121,7 +121,7 @@
         "havelland": 584.6279275768161,
         "hessian-low-mountain": 891.4282254191248,
         "north-hessian-loess": 804.949001671421,
-        "rheingau": 726.7422667758966
+        "rheingau": 726.219704440179
       },
       "ramp": "sequential",
       "unit": {
@@ -132,12 +132,12 @@
     "change": {
       "2041_2070": {
         "breaks": [
+          0.0,
           0.5,
           1.0,
           1.5,
           2.0,
-          2.5,
-          3.0
+          2.5
         ],
         "colors": [
           "#00b3ad",
@@ -151,7 +151,7 @@
           "havelland": 1.2017339416969486,
           "hessian-low-mountain": 1.4327840544605777,
           "north-hessian-loess": 0.6836053743692616,
-          "rheingau": 0.9926869544533579
+          "rheingau": 0.7086888158735709
         },
         "ramp": "sequential",
         "unit": {
@@ -161,12 +161,12 @@
       },
       "2071_2100": {
         "breaks": [
-          1.0,
+          0.5,
+          1.5,
           2.5,
           3.0,
           3.5,
-          4.0,
-          4.5
+          4.0
         ],
         "colors": [
           "#00b3ad",
@@ -180,7 +180,7 @@
           "havelland": 2.5620457262348055,
           "hessian-low-mountain": 2.8296657558637204,
           "north-hessian-loess": 2.3142482229097006,
-          "rheingau": 1.8941410165530186
+          "rheingau": 1.468456648149057
         },
         "ramp": "sequential",
         "unit": {
@@ -194,9 +194,9 @@
     "baseline": {
       "breaks": [
         155.0,
-        184.0,
-        202.0,
-        225.0,
+        185.0,
+        201.0,
+        220.0,
         297.0
       ],
       "colors": [
@@ -210,7 +210,7 @@
         "havelland": 181.43360359015398,
         "hessian-low-mountain": 226.36658241212044,
         "north-hessian-loess": 226.4594595376267,
-        "rheingau": 199.4523123310076
+        "rheingau": 199.71443891185976
       },
       "ramp": "sequential",
       "unit": {
@@ -221,12 +221,12 @@
     "change": {
       "2041_2070": {
         "breaks": [
-          -8.0,
+          -8.5,
+          -7.0,
           -6.0,
           -5.5,
           -5.0,
-          -4.5,
-          -4.0
+          -4.5
         ],
         "colors": [
           "#00b3ad",
@@ -240,7 +240,7 @@
           "havelland": -4.600711735284843,
           "hessian-low-mountain": -5.762276635063962,
           "north-hessian-loess": -5.555311113211654,
-          "rheingau": -6.857036937237497
+          "rheingau": -7.394549736457244
         },
         "ramp": "sequential",
         "unit": {
@@ -250,11 +250,11 @@
       },
       "2071_2100": {
         "breaks": [
-          -11.5,
+          -12.5,
+          -10.0,
           -9.0,
           -8.5,
-          -8.0,
-          -5.5,
+          -6.0,
           -4.5
         ],
         "colors": [
@@ -269,7 +269,7 @@
           "havelland": -6.364141536560713,
           "hessian-low-mountain": -8.630132406247693,
           "north-hessian-loess": -8.68129283374031,
-          "rheingau": -9.810526955489316
+          "rheingau": -10.352725807904022
         },
         "ramp": "sequential",
         "unit": {
@@ -283,10 +283,10 @@
     "baseline": {
       "breaks": [
         1154.0,
-        1735.0,
-        1888.0,
-        2025.0,
-        2284.0
+        1736.0,
+        1886.0,
+        2027.0,
+        2323.0
       ],
       "colors": [
         "#fce3da",
@@ -299,7 +299,7 @@
         "havelland": 2033.0731225044437,
         "hessian-low-mountain": 1770.6176021912654,
         "north-hessian-loess": 1737.8724602862858,
-        "rheingau": 1846.2133276136522
+        "rheingau": 1886.8012143022843
       },
       "ramp": "sequential",
       "unit": {
@@ -311,11 +311,11 @@
       "2041_2070": {
         "breaks": [
           551.0,
-          615.0,
-          628.0,
-          643.0,
-          655.0,
-          692.0
+          617.0,
+          630.0,
+          644.0,
+          656.0,
+          728.0
         ],
         "colors": [
           "#fce3da",
@@ -329,7 +329,7 @@
           "havelland": 653.83200053591,
           "hessian-low-mountain": 620.5214612481121,
           "north-hessian-loess": 618.4386559482851,
-          "rheingau": 638.6664118830805
+          "rheingau": 644.6520285587071
         },
         "ramp": "sequential",
         "unit": {
@@ -340,11 +340,11 @@
       "2071_2100": {
         "breaks": [
           946.0,
-          1072.0,
-          1098.0,
+          1076.0,
+          1099.0,
           1122.0,
-          1140.0,
-          1209.0
+          1141.0,
+          1255.0
         ],
         "colors": [
           "#fce3da",
@@ -358,7 +358,7 @@
           "havelland": 1138.8880526731216,
           "hessian-low-mountain": 1084.7148938718005,
           "north-hessian-loess": 1076.9650175724323,
-          "rheingau": 1114.0224072168503
+          "rheingau": 1120.4741291515934
         },
         "ramp": "sequential",
         "unit": {

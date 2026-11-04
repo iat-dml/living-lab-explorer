@@ -296,6 +296,11 @@ def generate_layer_sources() -> None:
         if sources_by_state:
             entry["providersByState"] = sources_by_state
             entry["llStates"] = layer.get("ll_states", {}) or {}
+        # Per-LL coverage caveats (e.g. boris for a cross-state LL). Same opt-in rule:
+        # only layers that declare coverage_notes gain the key.
+        coverage_notes = layer.get("coverage_notes")
+        if coverage_notes:
+            entry["coverageNotes"] = coverage_notes
         entries.append(entry)
 
     target = resolve("app/src/data/layer_sources.js")

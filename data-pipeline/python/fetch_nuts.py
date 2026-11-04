@@ -35,10 +35,12 @@ GISCO_URL = (
 )
 CACHE = DATA / "_cache" / "nuts3_2021_de.geojson"
 
-# Two code assignments carried over from the original hard-coded table, still unconfirmed:
+# Notes on two code assignments:
 #   havelland - the stakeholder supplied DE406 (Dahme-Spreewald in NUTS 2021)
 #     while Havelland is DE408; both are kept until someone verifies which was meant.
-#   rheingau - DE71D (Rheingau-Taunus-Kreis, NUTS 2021) is proposed, not confirmed.
+#   rheingau - decided 2026-11-04 (option B of investigations/rheingau-boundary): every
+#     NUTS3 Kreis intersecting the UNESCO site Oberes Mittelrheintal -- DE71D, DEB11,
+#     DEB17, DEB1A, DEB1D, DEB3J. Spans Hessen and Rheinland-Pfalz.
 
 
 def load_ll_nuts3() -> dict[str, list[str]]:

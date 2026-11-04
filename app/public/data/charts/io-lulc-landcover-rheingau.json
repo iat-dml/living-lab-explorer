@@ -1,6 +1,6 @@
 {
   "chart_type": "bar",
-  "generated_at": "2026-08-17T13:17:14.055180Z",
+  "generated_at": "2026-11-04T13:58:42.433986Z",
   "layer_id": "landscape",
   "ll_slug": "rheingau",
   "mock": false,
@@ -10,56 +10,64 @@
         "de": "Wald",
         "en": "Forest"
       },
-      "pct": 60.4,
-      "value": 62369.0
+      "pct": 44.5,
+      "value": 213998.8
     },
     {
       "label": {
         "de": "Ackerland",
         "en": "Cropland"
       },
-      "pct": 24.5,
-      "value": 25319.4
+      "pct": 40.2,
+      "value": 193576.8
     },
     {
       "label": {
         "de": "Siedlung",
         "en": "Settlement"
       },
-      "pct": 8.2,
-      "value": 8475.0
+      "pct": 10.5,
+      "value": 50604.0
     },
     {
       "label": {
         "de": "Gruenland",
         "en": "Grassland"
       },
-      "pct": 4.5,
-      "value": 4698.5
+      "pct": 3.1,
+      "value": 15030.8
     },
     {
       "label": {
         "de": "Wasser",
         "en": "Water"
       },
-      "pct": 2.3,
-      "value": 2380.5
+      "pct": 1.6,
+      "value": 7866.5
     },
     {
       "label": {
         "de": "Offenboden",
         "en": "Bare ground"
       },
-      "pct": 0.01,
-      "value": 15.0
+      "pct": 0.02,
+      "value": 86.1
     },
     {
       "label": {
         "de": "Feuchtgebiet",
         "en": "Wetland"
       },
-      "pct": 0.01,
-      "value": 7.0
+      "pct": 0.004,
+      "value": 18.7
+    },
+    {
+      "label": {
+        "de": "Wolken",
+        "en": "Clouds"
+      },
+      "pct": 2e-05,
+      "value": 0.1
     }
   ],
   "source": "io-lulc-landcover",

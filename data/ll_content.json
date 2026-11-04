@@ -212,10 +212,10 @@
   "rheingau": {
     "slug": "rheingau",
     "manager": { "name": "Kristina Heilemann", "email": "Kristina.Heilemann@zalf.de" },
-    "nuts3": ["DE71D"],
+    "nuts3": ["DE71D", "DEB11", "DEB17", "DEB1A", "DEB1D", "DEB3J"],
     "num": "05",
     "order": 5,
-    "region": { "en": "Hesse", "de": "Hessen" },
+    "region": { "en": "Hesse / Rhineland-Palatinate", "de": "Hessen / Rheinland-Pfalz" },
     "color": "#359269",
     "colorDark": "#225e43",
     "outlineColor": "#dc4b14",

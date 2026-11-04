@@ -264,9 +264,11 @@ these three points:
    `fetch_protected_areas.py` cache their GML responses per Living Lab slug
    (`data/_cache/…/{slug}__*.gml`), so without `--refresh` they replay the *old* bounding box
    and silently produce stale output under the new codes.
-2. **`fetch_destatis.py` does not need `--force`.** Its cache holds whole national cubes and the
-   region filtering happens after parsing, so the cached CSVs already contain any newly added
-   Kreis. Use `--force` only if you also want fresher Destatis values.
+2. **`fetch_destatis.py` needs `--force` when a Kreis is added.** The Regionalstatistik.de
+   tables (`data/destatis_raw/*__regionalstatistik.csv`) are requested for the project's AGS
+   codes only, so a newly added Kreis is missing from the cache and most of its fields stay
+   null until the tables are re-downloaded. `--force` also refreshes every other LL's values
+   to the latest year.
 3. **Check the land-cover tile assignment.** `sources.yaml`'s `io-lulc-landcover.input.tiles`
    maps each slug to a single UTM tile (`32U` or `33U`). If a Living Lab's new codes push it
    across that zone boundary — or make it span both — that mapping must be corrected by hand

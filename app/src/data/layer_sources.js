@@ -112,6 +112,12 @@ export const LAYER_SOURCES = [
       "hessian-low-mountain": "he",
       "havelland": "bb",
       "east-brandenburg": "bb"
+    },
+    "coverageNotes": {
+      "rheingau": {
+        "en": "Covers only the Hessian part of this Living Lab. Rhineland-Palatinate publishes its land values as a map image service (WMS) only, without downloadable zones.",
+        "de": "Deckt nur den hessischen Teil dieses Living Labs ab. Rheinland-Pfalz veröffentlicht seine Bodenrichtwerte nur als Kartendienst (WMS), ohne abrufbare Zonen."
+      }
     }
   },
   {
