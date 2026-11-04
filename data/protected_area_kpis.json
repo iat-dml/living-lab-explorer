@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "computed_at": "2026-08-17T13:18:24.492336Z",
+    "computed_at": "2026-11-04T13:49:55.420694Z",
     "input_pattern": "data/geojson/protected-areas-{slug}.geojson",
     "metric_crs": "EPSG:25832",
     "source": "bfn_wfs"
@@ -38,11 +38,11 @@
     "nature_reserves_source_sum_ha": 8230.4
   },
   "rheingau": {
-    "natura2000_feature_count": 37,
-    "natura2000_ha": 10501.3,
-    "natura2000_source_sum_ha": 42174.0,
-    "nature_reserves_feature_count": 41,
-    "nature_reserves_ha": 1221.7,
-    "nature_reserves_source_sum_ha": 1352.1
+    "natura2000_feature_count": 87,
+    "natura2000_ha": 72770.0,
+    "natura2000_source_sum_ha": 208144.2,
+    "nature_reserves_feature_count": 144,
+    "nature_reserves_ha": 13368.6,
+    "nature_reserves_source_sum_ha": 16100.199999999999
   }
 }

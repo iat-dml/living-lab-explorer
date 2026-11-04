@@ -53,7 +53,7 @@ LL_NUTS3: dict[str, list[str]] = {
     "havelland": ["DE408"],
     "north-hessian-loess":  ["DE734", "DE737"],
     "hessian-low-mountain": ["DE721", "DE722", "DE723", "DE724", "DE725"],
-    "rheingau":             ["DE71D"],
+    "rheingau":             ["DE71D", "DEB11", "DEB17", "DEB1A", "DEB1D", "DEB3J"],
 }
 ALL_NUTS3: list[str] = sorted({c for codes in LL_NUTS3.values() for c in codes})
 
@@ -77,6 +77,11 @@ NUTS3_TO_AGS: dict[str, str] = {
     "DE724": "06534",  # Marburg-Biedenkopf, Landkreis
     "DE725": "06535",  # Vogelsbergkreis
     "DE71D": "06439",  # Rheingau-Taunus-Kreis
+    "DEB11": "07111",  # Koblenz, kreisfreie Stadt
+    "DEB17": "07137",  # Mayen-Koblenz, Landkreis
+    "DEB1A": "07141",  # Rhein-Lahn-Kreis
+    "DEB1D": "07140",  # Rhein-Hunsrueck-Kreis
+    "DEB3J": "07339",  # Mainz-Bingen, Landkreis
 }
 assert set(NUTS3_TO_AGS) == set(ALL_NUTS3), "NUTS3_TO_AGS must cover every code in ALL_NUTS3"
 

@@ -1,6 +1,6 @@
 {
   "chart_type": "bar",
-  "generated_at": "2026-08-17T13:17:22.265449Z",
+  "generated_at": "2026-11-04T13:56:40.967344Z",
   "layer_id": "soil",
   "ll_slug": "rheingau",
   "mock": false,
@@ -11,35 +11,8 @@
         "de": "Braunerden",
         "en": "Brown soils"
       },
-      "pct": 66.7,
-      "value": 53924.2
-    },
-    {
-      "group_key": "luvisols",
-      "label": {
-        "de": "Lessivés",
-        "en": "Luvisols"
-      },
-      "pct": 17.2,
-      "value": 13886.2
-    },
-    {
-      "group_key": "gley-soils",
-      "label": {
-        "de": "Gleye",
-        "en": "Gley soils"
-      },
-      "pct": 5.2,
-      "value": 4182.5
-    },
-    {
-      "group_key": "stagnic-soils",
-      "label": {
-        "de": "Stauwasserböden",
-        "en": "Stagnic soils"
-      },
-      "pct": 5.0,
-      "value": 4039.4
+      "pct": 59.7,
+      "value": 245109.5
     },
     {
       "group_key": "ah-c-soils",
@@ -47,8 +20,62 @@
         "de": "Ah/C-Böden",
         "en": "Ah/C soils"
       },
-      "pct": 4.0,
-      "value": 3243.0
+      "pct": 12.4,
+      "value": 50693.4
+    },
+    {
+      "group_key": "luvisols",
+      "label": {
+        "de": "Lessivés",
+        "en": "Luvisols"
+      },
+      "pct": 9.9,
+      "value": 40818.4
+    },
+    {
+      "group_key": "stagnic-soils",
+      "label": {
+        "de": "Stauwasserböden",
+        "en": "Stagnic soils"
+      },
+      "pct": 7.2,
+      "value": 29543.5
+    },
+    {
+      "group_key": "colluvials",
+      "label": {
+        "de": "Kolluvisole",
+        "en": "Colluvials"
+      },
+      "pct": 2.5,
+      "value": 10091.8
+    },
+    {
+      "group_key": "gley-soils",
+      "label": {
+        "de": "Gleye",
+        "en": "Gley soils"
+      },
+      "pct": 2.2,
+      "value": 9048.3
+    },
+    {
+      "group_key": "alluvial-soils",
+      "label": {
+        "de": "Auenböden",
+        "en": "Alluvial soils"
+      },
+      "pct": 2.0,
+      "value": 8212.4
+    },
+    {
+      "group_key": "chernozems",
+      "label": {
+        "de": "Schwarzerden",
+        "en": "Chernozems"
+      },
+      "pct": 1.9,
+      "value": 7951.4
     },
     {
       "group_key": "special-area",
@@ -57,16 +84,25 @@
         "en": "Special area"
       },
       "pct": 1.2,
-      "value": 935.7
+      "value": 4765.6
     },
     {
-      "group_key": "alluvial-soils",
+      "group_key": "initial-soils",
       "label": {
-        "de": "Auenböden",
-        "en": "Alluvial soils"
+        "de": "Rohböden",
+        "en": "Initial soils"
       },
-      "pct": 0.6,
-      "value": 452.4
+      "pct": 0.3,
+      "value": 1325.4
+    },
+    {
+      "group_key": "pelosols",
+      "label": {
+        "de": "Pelosole",
+        "en": "Pelosols"
+      },
+      "pct": 0.3,
+      "value": 1366.5
     },
     {
       "group_key": "podzols",
@@ -74,8 +110,35 @@
         "de": "Podsole",
         "en": "Podzols"
       },
-      "pct": 0.3,
-      "value": 202.5
+      "pct": 0.2,
+      "value": 914.9
+    },
+    {
+      "group_key": "stadtkernbereiche-and-oder-gewerbe-and-industriegebiete-sealed-surfaces-with-soils-from-anthropogenen-auff-llungen-kippsubstraten-andifferenziert",
+      "label": {
+        "de": "Stadtkernbereiche (und/oder Gewerbe- und Industriegebiete): Versiegelte Flächen mit Böden aus anthropogenen Auffüllungen (Kippsubstraten, undifferenziert)",
+        "en": "Stadtkernbereiche (and/oder Gewerbe- and Industriegebiete): sealed surfaces with soils from anthropogenen Auffüllungen (Kippsubstraten, andifferenziert)"
+      },
+      "pct": 0.1,
+      "value": 212.7
+    },
+    {
+      "group_key": "fens",
+      "label": {
+        "de": "Niedermoore",
+        "en": "Fens"
+      },
+      "pct": 0.03,
+      "value": 118.6
+    },
+    {
+      "group_key": "soils-der-abgrabungsfl-chen-steinbr-che-gruben-and-aufsch-ttungen-halden-kippsubstrate-andifferenziert",
+      "label": {
+        "de": "Böden der Abgrabungsflächen (Steinbrüche, Gruben) und Aufschüttungen (Halden; Kippsubstrate, undifferenziert)",
+        "en": "Soils der Abgrabungsflächen (Steinbrüche, Gruben) and Aufschüttungen (Halden; Kippsubstrate, andifferenziert)"
+      },
+      "pct": 0.03,
+      "value": 109.0
     },
     {
       "group_key": "water-area",
@@ -83,8 +146,8 @@
         "de": "Gewässer",
         "en": "Water area"
       },
-      "pct": 0.01,
-      "value": 6.7
+      "pct": 0.02,
+      "value": 94.9
     }
   ],
   "source": "buek250",

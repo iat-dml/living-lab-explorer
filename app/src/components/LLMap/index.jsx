@@ -651,6 +651,10 @@ function MapInfoControl({ layer, slug, overlayIds = [] }) {
   const layerTitle = layerSource
     ? layerSource.title?.[lang] || layerSource.title?.en || layerSource.dataset
     : ''
+  // Optional per-LL caveat from sources.yaml coverage_notes (e.g. boris covering only the
+  // Hessian part of the cross-state Rheingau LL).
+  const coverageNoteEntry = layerSource?.coverageNotes?.[slug]
+  const coverageNote = coverageNoteEntry ? coverageNoteEntry[lang] || coverageNoteEntry.en : ''
 
   return (
     <div
@@ -731,6 +735,9 @@ function MapInfoControl({ layer, slug, overlayIds = [] }) {
               viewSourceLabel={t('map.info.viewSource')}
               licenseLabel={t('map.info.license')}
             />
+          ) : null}
+          {showLayerRow && coverageNote ? (
+            <div style={{ color: C.muted, fontStyle: 'italic' }}>{coverageNote}</div>
           ) : null}
           {overlayIds.map((overlayId) => {
             const overlaySource = LAYER_SOURCE_INDEX.get(overlayId)

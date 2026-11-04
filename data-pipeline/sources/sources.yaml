@@ -211,16 +211,16 @@ layers:
       url: "https://geodienste.bfn.de/ogc/wfs/schutzgebiet"
       version: "2.0.0"
       source_crs: "EPSG:25832"
-      bbox_crs: "urn:ogc:def:crs:EPSG::4326"
+      bbox_crs: "urn:ogc:def:crs:EPSG::25832"  # 2026-11-04: service ignores EPSG:4326 bboxes since its migration
       bbox_pad_deg: 0.05
       count: 5000
       coordinate_precision: 0.000001
       max_response_bytes: 104857600
       output_dir: data/geojson
       typenames:
-        natura2000-sci: "bfn_sch_Schutzgebiet:Fauna_Flora_Habitat_Gebiete"
-        natura2000-spa: "bfn_sch_Schutzgebiet:Vogelschutzgebiete"
-        naturschutzgebiet: "bfn_sch_Schutzgebiet:Naturschutzgebiete"
+        natura2000-sci: "schutzgebiet:Fauna_Flora_Habitat_Gebiete"
+        natura2000-spa: "schutzgebiet:Vogelschutzgebiete"
+        naturschutzgebiet: "schutzgebiet:Naturschutzgebiete"
     output:
       geojson_pattern: "data/geojson/protected-areas-{slug}.geojson"
 
@@ -240,9 +240,9 @@ layers:
       license: "GeoNutzV / Kostenfreier automatisierter Abruf nach Gutachterausschusskostengesetz"
       attribution: "Datenquelle: LGB Brandenburg / HLBG Hessen (BORIS)"
       citation: "LGB / HLBG: BORIS Bodenrichtwertinformationssystem."
-    # Per-Living-Lab detail: every LL sits entirely within one state, so attribution is
-    # rendered per state, not as a single fixed row (07-UI-SPEC.md "Data Attribution &
-    # Info Control"). generate_layer_sources() (sync.py) passes this through unchanged
+    # Per-Living-Lab detail: BORIS data is fetched from exactly one state service per LL
+    # (ll_states below), so attribution is rendered per state, not as a single fixed row
+    # (07-UI-SPEC.md "Data Attribution & Info Control"). generate_layer_sources() (sync.py) passes this through unchanged
     # into layer_sources.js as providersByState -- do not hand-copy these strings into
     # i18n.js (Phase 5 D-05.4 precedent).
     sources_by_state:
@@ -294,12 +294,21 @@ layers:
           value_typename: null
           geometry_property: "adv:position"
           join: null
+    # Rheingau (since 2026-11-04, option B boundary) spans Hessen and Rheinland-Pfalz, but
+    # only Hessen is fetched: RLP publishes its open Bodenrichtwerte (VBORIS RLP Basisdienst)
+    # as WMS only, with no WFS to pull zone polygons from. coverage_notes tells the user.
     ll_states:
       rheingau: he
       north-hessian-loess: he
       hessian-low-mountain: he
       havelland: bb
       east-brandenburg: bb
+    # Optional per-LL caveat shown in the map info panel (sync.py -> layer_sources.js
+    # coverageNotes). Only for LLs whose layer data does not cover the whole boundary.
+    coverage_notes:
+      rheingau:
+        en: "Covers only the Hessian part of this Living Lab. Rhineland-Palatinate publishes its land values as a map image service (WMS) only, without downloadable zones."
+        de: "Deckt nur den hessischen Teil dieses Living Labs ab. Rheinland-Pfalz veröffentlicht seine Bodenrichtwerte nur als Kartendienst (WMS), ohne abrufbare Zonen."
     semantics:
       contract_version: boris-usage-semantics-v1
       # W-02 (07-SPIKE.md, locked 2026-07-28): rolling 10-year window, not a hardcoded

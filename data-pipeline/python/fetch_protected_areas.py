@@ -35,15 +35,20 @@ BUNDESLAND = {
     "TH": ("Thuringia", "Thüringen"),
 }
 
-# Per-designation metadata: field names, UI labels, and data details
+# Per-designation metadata: field names, UI labels, and data details.
+# Field names follow the migrated BfN service (live probe 2026-11-04): the FFH layer now
+# uses the same NAME/BL/SITECODE names as the SPA layer and reports its area only as
+# st_area_shape_ (m^2 in EPSG:25832, hence area_scale), and neither Natura 2000 layer
+# carries a legal date any more (date_field None -> established_year stays null).
 DESIGNATIONS = {
     "natura2000-sci": {
         "designation": "Natura 2000 SCI",
-        "name_field": "Gebietsname",
-        "state_field": "Bundesland",
-        "site_code_field": "Gebietsnummer",
-        "area_field": "FLAECHE",
-        "date_field": "Datum_der_gueltigen_Verordnung",
+        "name_field": "NAME",
+        "state_field": "BL",
+        "site_code_field": "SITECODE",
+        "area_field": "st_area_shape_",
+        "area_scale": 1e-4,
+        "date_field": None,
         "year_field": None,
         "label_en": "Special Conservation Area",
         "label_de": "FFH-Gebiet",
@@ -54,7 +59,7 @@ DESIGNATIONS = {
         "state_field": "BL",
         "site_code_field": "SITECODE",
         "area_field": "FLAECHE",
-        "date_field": "LEG_DATE",
+        "date_field": None,
         "year_field": None,
         "label_en": "Special Protection Area",
         "label_de": "Vogelschutzgebiet",
@@ -81,14 +86,33 @@ def _write_geojson(frame: gpd.GeoDataFrame, output_path: Path) -> None:
 
 
 def _bbox_param(geom, pad: float = 0.05, bbox_crs: str = "urn:ogc:def:crs:EPSG::4326") -> str:
-    """Build a WFS BBOX parameter from a geometry with optional padding.
+    """Build a WFS BBOX parameter from an EPSG:4326 geometry with optional padding (degrees).
 
-    lat,lon order with the urn:ogc:def:crs:EPSG::4326 suffix is MANDATORY.
-    Any other spelling (lon,lat, plain EPSG:4326, native EPSG:25832, no suffix)
-    returns HTTP 200 with zero features and no error message.
+    For urn:ogc:def:crs:EPSG::4326 the output is lat,lon order with the urn suffix. Up to
+    July 2026 that was the only spelling the BfN service accepted.
+
+    For a projected bbox_crs (e.g. urn:ogc:def:crs:EPSG::25832), the padded box is
+    reprojected and written in easting,northing order. The BfN service was migrated
+    (namespace `bfn_sch_Schutzgebiet` -> `schutzgebiet`) and, live probe 2026-11-04,
+    now only matches bboxes in its native EPSG:25832. Every EPSG:4326 spelling returns
+    HTTP 200 with zero features and no error message.
     """
     minx, miny, maxx, maxy = geom.bounds  # lon/lat, EPSG:4326
-    return f"{miny - pad:.4f},{minx - pad:.4f},{maxy + pad:.4f},{maxx + pad:.4f},{bbox_crs}"
+    minx, miny, maxx, maxy = minx - pad, miny - pad, maxx + pad, maxy + pad
+    epsg = int(bbox_crs.rsplit(":", 1)[-1])
+    if epsg == 4326:
+        return f"{miny:.4f},{minx:.4f},{maxy:.4f},{maxx:.4f},{bbox_crs}"
+    import math
+
+    from pyproj import Transformer
+    from shapely.geometry import box
+    from shapely.ops import transform
+
+    to_native = Transformer.from_crs(4326, epsg, always_xy=True).transform
+    # Segmentize first so the envelope of the curved, reprojected edges covers the whole box.
+    x0, y0, x1, y1 = transform(to_native, box(minx, miny, maxx, maxy).segmentize(0.01)).bounds
+    # Round outward to whole metres so formatting never trims the box.
+    return f"{math.floor(x0)},{math.floor(y0)},{math.ceil(x1)},{math.ceil(y1)},{bbox_crs}"
 
 
 def _get(url: str, params: dict, max_bytes: int) -> bytes:
@@ -252,7 +276,7 @@ def _normalise(frame: gpd.GeoDataFrame, key: str, cfg: dict) -> gpd.GeoDataFrame
     result["designation_de"] = cfg["label_de"]
 
     # Area in hectares (confirmed as hectares in research)
-    result["area_ha"] = frame[cfg["area_field"]].astype(float).round(1)
+    result["area_ha"] = (frame[cfg["area_field"]].astype(float) * cfg.get("area_scale", 1.0)).round(1)
 
     # Established year (prefer year_field if present, else parse date_field)
     def extract_year(row):
@@ -261,6 +285,8 @@ def _normalise(frame: gpd.GeoDataFrame, key: str, cfg: dict) -> gpd.GeoDataFrame
             if pd.notna(year_val):
                 return int(year_val)
         # Try to extract 4-digit year from date field
+        if not cfg["date_field"]:
+            return None
         date_val = row[cfg["date_field"]]
         if pd.notna(date_val):
             date_str = str(date_val)[:4]

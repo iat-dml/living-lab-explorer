@@ -14,6 +14,7 @@ from conftest import LL_SLUGS, repo_root
 DESTATIS_ALL_NUTS3 = [
     "DE409", "DE40A", "DE40B", "DE40C", "DE408", "DE734", "DE737",
     "DE721", "DE722", "DE723", "DE724", "DE725", "DE71D",
+    "DEB11", "DEB17", "DEB1A", "DEB1D", "DEB3J",
 ]
 
 
@@ -117,12 +118,12 @@ def test_protected_areas_layer_contract_declared() -> None:
     assert layer["build"]["script"] == "python/fetch_protected_areas.py"
     assert layer["wfs"]["url"] == "https://geodienste.bfn.de/ogc/wfs/schutzgebiet"
     assert layer["wfs"]["version"] == "2.0.0"
-    assert layer["wfs"]["bbox_crs"] == "urn:ogc:def:crs:EPSG::4326"
+    assert layer["wfs"]["bbox_crs"] == "urn:ogc:def:crs:EPSG::25832"
     assert layer["wfs"]["source_crs"] == "EPSG:25832"
     assert layer["wfs"]["bbox_pad_deg"] == 0.05
-    assert layer["wfs"]["typenames"]["natura2000-sci"] == "bfn_sch_Schutzgebiet:Fauna_Flora_Habitat_Gebiete"
-    assert layer["wfs"]["typenames"]["natura2000-spa"] == "bfn_sch_Schutzgebiet:Vogelschutzgebiete"
-    assert layer["wfs"]["typenames"]["naturschutzgebiet"] == "bfn_sch_Schutzgebiet:Naturschutzgebiete"
+    assert layer["wfs"]["typenames"]["natura2000-sci"] == "schutzgebiet:Fauna_Flora_Habitat_Gebiete"
+    assert layer["wfs"]["typenames"]["natura2000-spa"] == "schutzgebiet:Vogelschutzgebiete"
+    assert layer["wfs"]["typenames"]["naturschutzgebiet"] == "schutzgebiet:Naturschutzgebiete"
     assert layer["output"]["geojson_pattern"] == "data/geojson/protected-areas-{slug}.geojson"
     # Task 0 decision: precision is 0.000001 (Option B)
     assert "coordinate_precision" in layer["wfs"]
@@ -228,6 +229,28 @@ def test_protected_areas_bbox_param_axis_order() -> None:
     bbox_no_pad = _bbox_param(rheingau, pad=0.0)
     assert bbox_no_pad.startswith("49.9720,7.7726,50.2960,8.4108,"), \
         f"Expected lat,lon ordering with zero padding at start, got {bbox_no_pad}"
+
+
+def test_protected_areas_bbox_param_projected_crs() -> None:
+    """
+    Since the 2026 BfN service migration only native EPSG:25832 bboxes match. A projected
+    bbox_crs must come back as easting,northing in metres, covering the padded 4326 box.
+    """
+    from pyproj import Transformer
+
+    from fetch_protected_areas import _bbox_param
+
+    geom = box(7.0, 49.75, 8.4, 50.48)
+    bbox = _bbox_param(geom, pad=0.05, bbox_crs="urn:ogc:def:crs:EPSG::25832")
+    *coords, crs = bbox.split(",", 4)
+    assert crs == "urn:ogc:def:crs:EPSG::25832"
+    x0, y0, x1, y1 = map(float, coords)
+    assert 300_000 < x0 < x1 < 500_000 and 5_400_000 < y0 < y1 < 5_700_000, bbox
+
+    to_utm = Transformer.from_crs(4326, 25832, always_xy=True).transform
+    for lon, lat in [(6.95, 49.70), (8.45, 49.70), (6.95, 50.53), (8.45, 50.53), (7.7, 50.53)]:
+        x, y = to_utm(lon, lat)
+        assert x0 <= x <= x1 and y0 <= y <= y1, f"padded corner {lon},{lat} outside {bbox}"
 
 
 def test_destatis_nuts3_fixture_exists_and_matches_codes() -> None:

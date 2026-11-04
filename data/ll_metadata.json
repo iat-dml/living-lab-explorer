@@ -29,7 +29,7 @@
       },
       "tagline": "Multifunktionale und vielfältige Ackerbausysteme"
     },
-    "destatisRetrievedAt": "2026-08-17",
+    "destatisRetrievedAt": "2026-11-04",
     "en": {
       "name": "East Brandenburg",
       "narrative": {
@@ -185,7 +185,7 @@
             "de": "EUR",
             "en": "EUR"
           },
-          "value": 33837.25
+          "value": 35417.25
         },
         {
           "genesisTable": "13211-02-05-4",
@@ -381,7 +381,7 @@
       },
       "tagline": "Klimaschutz und Grünlandnutzung in Niedermoorregionen"
     },
-    "destatisRetrievedAt": "2026-08-17",
+    "destatisRetrievedAt": "2026-11-04",
     "en": {
       "name": "Havelland",
       "narrative": {
@@ -537,7 +537,7 @@
             "de": "EUR",
             "en": "EUR"
           },
-          "value": 25724.0
+          "value": 26345.0
         },
         {
           "genesisTable": "13211-02-05-4",
@@ -733,7 +733,7 @@
       },
       "tagline": "Integrierte Pflanze-Tier-Agrarsysteme"
     },
-    "destatisRetrievedAt": "2026-08-17",
+    "destatisRetrievedAt": "2026-11-04",
     "en": {
       "name": "Hessian Low Mountain Range",
       "narrative": {
@@ -889,7 +889,7 @@
             "de": "EUR",
             "en": "EUR"
           },
-          "value": 40568.0
+          "value": 43153.6
         },
         {
           "genesisTable": "13211-02-05-4",
@@ -1087,7 +1087,7 @@
       },
       "tagline": "Intensivierter ökologischer Landbau"
     },
-    "destatisRetrievedAt": "2026-08-17",
+    "destatisRetrievedAt": "2026-11-04",
     "en": {
       "name": "North Hessian Loess Plain",
       "narrative": {
@@ -1243,7 +1243,7 @@
             "de": "EUR",
             "en": "EUR"
           },
-          "value": 36173.0
+          "value": 37305.5
         },
         {
           "genesisTable": "13211-02-05-4",
@@ -1440,7 +1440,7 @@
       },
       "tagline": "Multifunktionale und klimaresiliente Weinbausysteme"
     },
-    "destatisRetrievedAt": "2026-08-17",
+    "destatisRetrievedAt": "2026-11-04",
     "en": {
       "name": "Rheingau",
       "narrative": {
@@ -1478,7 +1478,7 @@
             "de": "ha",
             "en": "ha"
           },
-          "value": 11272.0
+          "value": 104899.0
         },
         {
           "genesisTable": "41141-04-02-4",
@@ -1488,7 +1488,7 @@
             "de": "Anzahl",
             "en": "count"
           },
-          "value": 601.0
+          "value": 3426.0
         },
         {
           "genesisTable": "41141-04-02-4",
@@ -1498,7 +1498,7 @@
             "de": "ha",
             "en": "ha"
           },
-          "value": 33.5
+          "value": 45.5
         },
         {
           "genesisTable": "41141-04-02-4",
@@ -1508,12 +1508,12 @@
             "de": "%",
             "en": "%"
           },
-          "value": 10.9
+          "value": 7.5
         }
       ],
       "climate": [
         {
-          "delta": 1112.0,
+          "delta": 1119.0,
           "deltaHorizon": "2071-2100",
           "deltaUnit": {
             "de": "°C·d",
@@ -1526,7 +1526,7 @@
             "de": "°C·d",
             "en": "°C·d"
           },
-          "value": 1834.0
+          "value": 1885.0
         },
         {
           "delta": 3.9,
@@ -1542,10 +1542,10 @@
             "de": "°C",
             "en": "°C"
           },
-          "value": 8.9
+          "value": 9.1
         },
         {
-          "delta": 1.9,
+          "delta": 1.5,
           "deltaHorizon": "2071-2100",
           "deltaUnit": {
             "de": "%",
@@ -1558,10 +1558,10 @@
             "de": "mm",
             "en": "mm"
           },
-          "value": 726.0
+          "value": 722.0
         },
         {
-          "delta": -9.8,
+          "delta": -10.4,
           "deltaHorizon": "2071-2100",
           "deltaUnit": {
             "de": "%",
@@ -1586,7 +1586,7 @@
             "de": "Personen",
             "en": "persons"
           },
-          "value": 186050.0
+          "value": 954163.0
         },
         {
           "genesisTable": "82000-01-01-4",
@@ -1596,7 +1596,7 @@
             "de": "EUR",
             "en": "EUR"
           },
-          "value": 28672.0
+          "value": 48126.5
         },
         {
           "genesisTable": "13211-02-05-4",
@@ -1606,7 +1606,7 @@
             "de": "%",
             "en": "%"
           },
-          "value": 5.1
+          "value": 4.92
         },
         {
           "genesisTable": "82000-07-01-4",
@@ -1616,7 +1616,7 @@
             "de": "EUR",
             "en": "EUR"
           },
-          "value": 31202.0
+          "value": 29344.0
         }
       ],
       "landscape": [
@@ -1628,7 +1628,7 @@
             "de": "ha",
             "en": "ha"
           },
-          "value": 43842.0
+          "value": 159606.0
         },
         {
           "genesisTable": null,
@@ -1638,7 +1638,7 @@
             "de": "ha",
             "en": "ha"
           },
-          "value": 10501.3
+          "value": 72770.0
         },
         {
           "genesisTable": null,
@@ -1648,7 +1648,7 @@
             "de": "ha",
             "en": "ha"
           },
-          "value": 1221.7
+          "value": 13368.6
         },
         {
           "genesisTable": "33111-01-02-4",
@@ -1658,7 +1658,7 @@
             "de": "%",
             "en": "%"
           },
-          "value": 13.6
+          "value": 15.4
         }
       ],
       "soil": [
@@ -1690,7 +1690,7 @@
             "de": "1000 cbm",
             "en": "1000 m3"
           },
-          "value": 74.0
+          "value": 9740.0
         }
       ]
     },
@@ -1752,13 +1752,18 @@
     },
     "num": "05",
     "nuts3": [
-      "DE71D"
+      "DE71D",
+      "DEB11",
+      "DEB17",
+      "DEB1A",
+      "DEB1D",
+      "DEB3J"
     ],
     "order": 5,
     "outlineColor": "#dc4b14",
     "region": {
-      "de": "Hessen",
-      "en": "Hesse"
+      "de": "Hessen / Rheinland-Pfalz",
+      "en": "Hesse / Rhineland-Palatinate"
     },
     "slug": "rheingau"
   }
